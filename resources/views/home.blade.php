@@ -7,7 +7,7 @@
         @foreach ($movies as $movie)
         <div class="col-2">
                 <div class="poster">
-                    <img src="{{$movie->image}}" class="card-img-top" alt="...">
+                    <img src="{{$movie->image}}" class="card-img-top" alt="{{$movie->title}}">
                 </div>
                 <div class="card-info">
                      <h3 class="title">{{$movie->title}}</h3>
