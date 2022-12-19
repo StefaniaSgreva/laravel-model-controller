@@ -16,4 +16,21 @@ class PageController extends Controller
         // dd($movies);
         return view('home', compact('movies'));
     }
+
+    public function home()
+    {
+        // $books = Book::limit(3)->get();
+        $books = Movie::select('id', 'title', 'image')
+            ->limit(3)
+            ->get();
+
+        return view('home', compact('movies'));
+    }
+
+    public function show($id)
+    {
+        $movie = Movie::find($id);
+        // dd($movie);
+        return view('singlemovie', compact('movie'));
+    }
 }
